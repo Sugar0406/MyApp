@@ -4,4 +4,5 @@
     <string name="ToDo">What To Do Next ?</string>
     <string name="add">Add</string>
     <string name="describe">Describe Your Task</string>
+    <string name="deadline">Deadline</string>
 </resources>
