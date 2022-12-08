@@ -8,5 +8,5 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="banner_background">#EF98FF</color>
-    <color name="hint">#757575</color>
+    <color name="hint">#FF000000</color>
 </resources>
