@@ -44,26 +44,42 @@
         tools:ignore="Autofill"
         />
 
-    <!--  Deadline  -->
+    <!--  Deadline Date -->
     <TextView
-        android:id="@+id/DeadlineTextview"
+        android:id="@+id/DeadlineDateTextview"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:ems="10"
-        android:text="@string/deadline"
+        android:text="@string/deadlineDate"
         android:minHeight="48dp"
         android:textColor="@color/hint"
         android:textSize="18sp"
         android:gravity="start|center"
-        android:onClick="choosedate"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/InputToDo"
         tools:ignore="Autofill" />
+
+    <!--  Deadline Time -->
+    <TextView
+        android:id="@+id/DeadlineTimeTextview"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/deadlineTime"
+        android:minHeight="48dp"
+        android:textColor="@color/hint"
+        android:textSize="18sp"
+        android:gravity="start|center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/DeadlineDateTextview" />
 
     <!--  ToDo Describe  -->
     <EditText
@@ -71,7 +87,6 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:ems="10"
         android:gravity="start|top"
@@ -80,9 +95,9 @@
         android:minHeight="48dp"
         android:textColorHint="@color/hint"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/DeadlineTextview"
+        app:layout_constraintTop_toBottomOf="@+id/DeadlineTimeTextview"
         tools:ignore="Autofill" />
 
     <!--  Add Button  -->
@@ -92,12 +107,15 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:minWidth="48dp"
+
         android:text="@string/add"
-        android:onClick="addtodo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.049"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/DescribeTextview" />
+        app:layout_constraintTop_toBottomOf="@+id/DescribeTextview"
+        tools:ignore="TextContrastCheck" />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
