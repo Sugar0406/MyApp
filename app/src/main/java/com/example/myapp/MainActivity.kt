@@ -2,13 +2,16 @@ package com.example.myapp
 
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
+import android.content.res.Configuration
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
 //import androidx.room.Room
 //import com.example.myapp.data.TaskDataBase
 import java.util.*
@@ -22,29 +25,40 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        Log.d("lifecycle", "onCreate")
+
 
         val deadlineDate = findViewById<TextView>(R.id.DeadlineDateTextview)
-        deadlineDate.setOnClickListener{
+        deadlineDate.setOnClickListener {
             chooseDate(deadlineDate)
         }
 
         val deadlineTime = findViewById<TextView>(R.id.DeadlineTimeTextview)
-        deadlineTime.setOnClickListener{
+        deadlineTime.setOnClickListener {
             chooseTime(deadlineTime)
         }
 
         val addButton = findViewById<Button>(R.id.AddButton)
-        addButton.setOnClickListener{
+        addButton.setOnClickListener {
             addToDo(deadlineDate, deadlineTime)
         }
-//        val DB = Room.databaseBuilder(
-//            applicationContext,
-//            TaskDataBase::class.java,
-//            "TaskDB"
-//        ).build()
 
+        val layout = findViewById<ConstraintLayout>(R.id.ConstraintLayout)
+        layout.background.alpha = 150
     }
+    override fun onConfigurationChanged(newConfig: Configuration) {
+        super.onConfigurationChanged(newConfig)
+
+        // Checks the orientation of the screen
+        if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            Toast.makeText(this, "landscape", Toast.LENGTH_SHORT).show()
+        } else if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT) {
+            Toast.makeText(this, "portrait", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+
+
+
 
     private fun chooseDate(deadlineDate :TextView) {
         val calendar = Calendar.getInstance()
